@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonService } from "../common.service"
+import { AppComponent } from "../app.component"
 
 @Component({
   selector: 'app-form',
@@ -15,7 +16,11 @@ export class FormComponent implements OnInit {
   email: string;
   address: string;
 
-  constructor(private cs: CommonService) { }
+  constructor(
+    private cs: CommonService,
+    private ap: AppComponent
+    ) 
+    { }
 
   submits() {
     let details = {
@@ -30,6 +35,7 @@ export class FormComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.ap.home = false;
   }
 
 }

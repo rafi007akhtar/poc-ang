@@ -9,7 +9,8 @@ export class AppComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {
+  home: boolean = true;
 
+  ngOnInit() {
   }
 }
