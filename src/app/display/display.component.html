@@ -1,1 +1,23 @@
-<p>display works!</p>
+<h1 class="text-center">Users</h1>
+
+<table class="table">
+	<thead>
+		<th>Name</th>
+		<th>Employee Id</th>
+		<th>Mobile Number</th>
+		<th>Email</th>
+		<th>Address</th>
+	</thead>
+	<tbody>
+		<td *ngFor="let user of users">{{ user.name }}</td>
+		<td *ngFor="let user of users">{{ user.empid }}</td>
+		<td *ngFor="let user of users">{{ user.mob }}</td>
+		<td *ngFor="let user of users">{{ user.email }}</td>
+		<td *ngFor="let user of users">{{ user.address }}</td>
+	</tbody>
+</table>
+<ul>
+	<!-- <li *ngFor="let user of users">{{ user. }}</li> -->
+</ul>
+
+

@@ -9,9 +9,13 @@ import { CommonService } from "../common.service"
 })
 export class DisplayComponent implements OnInit {
 
-  constructor(private cs: CommonService) { }
+  users: any;
+
+  constructor() { }
 
   ngOnInit() {
+    this.users = CommonService.users;
+    console.log(this.users)
   }
 
 }

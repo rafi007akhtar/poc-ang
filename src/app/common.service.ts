@@ -7,11 +7,11 @@ export class CommonService {
 
   constructor() { }
 
-  users = [];
+  static users = [];
 
   displayDetails(details: any) {
-    this.users.push(details);
+    CommonService.users.push(details);
     alert("Successfully added!");
-    console.log(this.users);
+    console.log(CommonService.users);
   }
 }
