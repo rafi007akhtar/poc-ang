@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { CommonService } from "../common.service"
 import { AppComponent } from "../app.component"
 
@@ -17,8 +17,8 @@ export class FormComponent implements OnInit {
   address: string;
 
   constructor(
-    private cs: CommonService,
-    private ap: AppComponent
+    @Inject(CommonService) private cs: CommonService,
+    @Inject(AppComponent) private ap: AppComponent
     ) 
     { }
 

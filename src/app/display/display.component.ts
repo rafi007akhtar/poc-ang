@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { CommonService } from "../common.service"
 
 import { AppComponent } from "../app.component"
@@ -14,7 +14,7 @@ export class DisplayComponent implements OnInit {
   users: any;
   keys: any;
 
-  constructor(private ap: AppComponent) {
+  constructor(@Inject(AppComponent) private ap: AppComponent) {
     ap.home = false;
   }
 
