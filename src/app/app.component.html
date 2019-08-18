@@ -1,3 +1,15 @@
+<nav>
+  Quick Links:
+  <ul>
+    <li><a [routerLink]="['/']">Home Form</a></li>
+    <li>Reactive Form</li>
+    <li><a [routerLink]='["/display"]'>Display Data</a></li>
+  </ul>
+</nav>
+<div class="line"></div>
+
+<router-outlet></router-outlet>
+
 <h1 class="text-center">Home Form</h1>
 
 <form>
@@ -11,6 +23,12 @@
   <input type="number" placeholder="Enter your mobile number" class="form-control" name="mob" [(ngModel)]="mob">
   <br>
 
+  <input type="email" placeholder="Enter your email id" class="form-control" name="email" [(ngModel)]="email">
+  <br>
+
+  <input type="text" placeholder="Enter your address" class="form-control" name="address" [(ngModel)]="address">
+  <br>
 
   <input type="button" id="submit" (click)="submits()" value="Submit" class="btn btn-success">
+
 </form>

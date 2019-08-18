@@ -10,9 +10,17 @@ export class AppComponent implements OnInit {
   name: string = "";
   empid: number;
   mob: number;
+  email: string;
+  address: string;
 
   submits() {
-    let details = [this.name, this.empid, this.mob];
+    let details = {
+      "name": this.name, 
+      "empid": this.empid, 
+      "mob": this.mob, 
+      "email": this.email, 
+      "address": this.address
+    };
     console.log(details);
   }
 
