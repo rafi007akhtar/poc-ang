@@ -2,18 +2,16 @@
 
 <table class="table">
 	<thead>
-		<th>Name</th>
-		<th>Employee Id</th>
-		<th>Mobile Number</th>
-		<th>Email</th>
-		<th>Address</th>
+		<th *ngFor="let key of keys">{{ key | titlecase }} </th>
 	</thead>
 	<tbody>
-		<td *ngFor="let user of users">{{ user.name }}</td>
-		<td *ngFor="let user of users">{{ user.empid }}</td>
-		<td *ngFor="let user of users">{{ user.mob }}</td>
-		<td *ngFor="let user of users">{{ user.email }}</td>
-		<td *ngFor="let user of users">{{ user.address }}</td>
+		<tr *ngFor="let user of users">
+			<td>{{ user.name }}</td>
+			<td>{{ user.empid }}</td>
+			<td>{{ user.mob }}</td>
+			<td>{{ user.email }}</td>
+			<td>{{ user.address }}</td>
+		</tr>
 	</tbody>
 </table>
 <ul>

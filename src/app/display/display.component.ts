@@ -10,12 +10,13 @@ import { CommonService } from "../common.service"
 export class DisplayComponent implements OnInit {
 
   users: any;
-
+  keys: any;
   constructor() { }
 
   ngOnInit() {
     this.users = CommonService.users;
-    console.log(this.users)
+    this.keys = Object.keys(this.users[0]);
+    console.log(this.keys);
   }
 
 }
