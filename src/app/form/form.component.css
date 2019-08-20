@@ -1,0 +1,16 @@
+form > .ng-invalid {
+	border: 1px solid red;
+}
+
+form > .ng-untouched {
+	border: 1px solid grey;
+}
+
+form > .ng-valid {
+	border: 1px solid green;
+}
+
+.error {
+	color: brown;
+	font-size: 0.9em;
+}

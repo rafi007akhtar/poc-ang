@@ -1,20 +1,27 @@
 <h1 class="text-center">Home Form</h1>
 
-<form>
+<form #form="ngForm" class="container-fluid">
+  <!-- {{ form.value | json}} -->
   <label for="name">* Name:</label>
-  <input type="text" name="name" [(ngModel)]="name" class="form-control" placeholder="Enter your name" required>
+  <input type="text" name="name" #refName="ngModel" [(ngModel)]="name" class="form-control" placeholder="Enter your name" required pattern="[a-zA-Z\s]+">
+  <p *ngIf="refName.invalid && refName.touched" class="error">Please provide a valid value to this field</p>
   <br>
   
   <label for="empid">* Employee id:</label>
-  <input type="number" placeholder="Enter your employee id" class="form-control" name="empid" [(ngModel)]="empid" required>
+  <input type="number" #empId="ngModel" placeholder="Enter your employee id" class="form-control" name="empid" [(ngModel)]="empid" required pattern="[0-9]{7}">
+  <p *ngIf="empId.invalid && empId.touched" class="error">Please provide a valid value to this field</p>
   <br>
 
-  <label for="mob">* Mobile Number:</label>
-  <input type="number" placeholder="Enter your mobile number" class="form-control" name="mob" [(ngModel)]="mob" required>
+  <label for="mob">* Mobile Number (10 digits):</label>
+  <input type="number" #mobile="ngModel" placeholder="Enter your mobile number" class="form-control" name="mob" [(ngModel)]="mob" required pattern="[0-9]{10}">
+  <p *ngIf="mobile.invalid && mobile.touched" class="error">Please provide a valid value to this field</p>
   <br>
 
   <label for="email">* Email id:</label>
-  <input type="email" placeholder="Enter your email id" class="form-control" name="email" [(ngModel)]="email" required>
+  <input type="email" #refEmail="ngModel" placeholder="Enter your email id" class="form-control" name="email" [(ngModel)]="email" required 
+  pattern='(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$'>
+  <p *ngIf="refEmail.invalid && refEmail.touched" class="error">Please provide a valid value to this field</p>
+
   <br>
 
   <label for="address">* Address:</label>
