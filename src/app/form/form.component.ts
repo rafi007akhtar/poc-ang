@@ -22,7 +22,7 @@ export class FormComponent implements OnInit {
     ) 
     { }
 
-  submits() {
+  submits(formVals) {
     let details = {
       "name": this.name, 
       "empid": this.empid, 
@@ -30,8 +30,8 @@ export class FormComponent implements OnInit {
       "email": this.email, 
       "address": this.address
     };
-    console.log(details);
-    this.cs.displayDetails(details)
+    console.log(formVals);
+    this.cs.displayDetails(formVals)
   }
 
   ngOnInit() {

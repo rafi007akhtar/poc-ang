@@ -1,6 +1,6 @@
 <h1 class="text-center">Home Form</h1>
 
-<form #form="ngForm" class="container-fluid">
+<form #form="ngForm" class="container-fluid" (ngSubmit)="submits(form.value)">
   <!-- {{ form.value | json}} -->
   <label for="name">* Name:</label>
   <input type="text" name="name" #refName="ngModel" [(ngModel)]="name" class="form-control" placeholder="Enter your name" required pattern="[a-zA-Z\s]+">
@@ -28,9 +28,10 @@
   <input type="text" placeholder="Enter your address" class="form-control" name="address" [(ngModel)]="address" required>
   <br>
 
-  <input type="button" id="submit" (click)="submits()" value="Submit" class="btn btn-success" required>
+  <input type="submit" id="submit" value="Submit" class="btn btn-success"
+  *ngIf="refName.valid && empId.valid && mobile.valid && refEmail.valid">
   <!-- &nbsp; -->
 
-  <input type="reset" name="reset" value="Clear Fields" class="btn btn-danger" style="float: right" required>
+  <input type="reset" name="reset" value="Clear Fields" class="btn btn-danger" style="float: right">
 
 </form>
