@@ -9,20 +9,25 @@ import { DisplayComponent } from './display/display.component'
 
 import { APP_ROUTES_PROVIDER } from "./app-routing.module";
 import { FormComponent } from './form/form.component';
-import { HomeComponent } from './home/home.component'
+import { HomeComponent } from './home/home.component';
+
+import { RxformComponent } from './rxform/rxform.component'
+import { ReactiveFormsModule } from "@angular/forms"
 
 @NgModule({
   declarations: [
     AppComponent,
     DisplayComponent,
     FormComponent,
-    HomeComponent
+    HomeComponent,
+    RxformComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    APP_ROUTES_PROVIDER
+    APP_ROUTES_PROVIDER,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
