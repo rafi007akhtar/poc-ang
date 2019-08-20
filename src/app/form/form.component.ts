@@ -22,14 +22,7 @@ export class FormComponent implements OnInit {
     ) 
     { }
 
-  submits(formVals) {
-    let details = {
-      "name": this.name, 
-      "empid": this.empid, 
-      "mob": this.mob, 
-      "email": this.email, 
-      "address": this.address
-    };
+  submits(formVals: any) {
     console.log(formVals);
     this.cs.displayDetails(formVals)
   }

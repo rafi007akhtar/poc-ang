@@ -25,9 +25,23 @@ export class RxformComponent implements OnInit {
     address: new FormControl()
   });
 
+  showSubmit = this.rform.valid;
+
   submits() {
-    console.log(this.rform.valid);
-    this.cs.displayDetails(this.rform.value)
+    if (this.rform.valid)
+      this.cs.displayDetails(this.rform.value);
+    else {
+      let invalidFields = [];
+      for (let field in this.rform.controls) {
+        if (this.rform.controls[field].status == "INVALID")
+          invalidFields.push(field);
+      }
+      alert("The following fields are invalid or incomplete: \n" + invalidFields)
+    }
+    // console.log(this.rform.controls)
+    for (let field in this.rform.controls) {
+      console.log(`${field} has status ${this.rform.controls[field].status}`);
+    }
   }
 
   ngOnInit() {

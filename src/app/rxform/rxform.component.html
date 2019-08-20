@@ -27,7 +27,7 @@
   <input type="text" placeholder="Enter your address" formControlName="address" class="form-control" name="address" required>
   <br>
 
-  <input type="submit" id="submit" value="Submit" class="btn btn-success">
+  <input type="submit" id="submit" value="Submit" class="btn btn-success" *ngIf="showSubmit">
   <!-- &nbsp; -->
 
   <input type="reset" name="reset" value="Clear Fields" class="btn btn-danger" style="float: right">
